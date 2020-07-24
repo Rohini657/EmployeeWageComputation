@@ -9,12 +9,16 @@ public class EmployeeWageComputation
 		final int partTime=2;
 		final int wagePerHour=20;
 		final int fullDayHour=8;
+		final int dayPerMonth=20;
+		final int totalHours=100;
 		//variable
 		int dailyWage;
 		int dailyHours;
 		int monthlyWage=0;
+		int hours=0;
+		int day=0;
 		//computation
-		for( int day=0;day<-dayPerMonth;d++)
+		while(hours<=totalHours && day<=dayPerMonth)
 		{
 			int empCheck=(int)Math.floor(Math.random()*10)%3;
 			switch(empCheck){
@@ -28,9 +32,12 @@ public class EmployeeWageComputation
 					dailyHours=0;
 				break;
 		}
+		hours += dailyHours;
+		day++;
 		dailyWage=wagePerHour*dailyHour;
 		System.out.println("Employee DailyWage= "+dailyWage);
 		monthlyWage=dailywage*20;
 		System.out.println("Employee Monthly wage="+monthlyWage)
+		
 	}
 }
